@@ -1,0 +1,67 @@
+/* Selector avanzado: wildcard / comodin */
+* {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 16px;
+}
+
+header {
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+}
+
+img {
+	width: 100%;
+	margin-bottom: 16px;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 3rem;
+}
+
+h3 {
+	font-weight: 600;
+	font-size: 2rem;
+	margin-bottom: 16px;
+}
+
+p {
+	font-size: 24px;
+	color: rgba(0, 0, 0, 0.8)
+}
+
+main img {
+	width: 500px;
+	height: auto;
+	margin-left: calc(50% - 250px);
+}
+
+div {
+	display: flex;
+	border: 1px solid black;
+	height: 700px;
+}
+
+aside {
+	width: 25%;
+	padding: 16px;
+}
+
+main {
+	width: 50%;
+	padding: 16px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
