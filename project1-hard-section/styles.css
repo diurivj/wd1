@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.yeseva-one-regular {
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+section {
+	margin: 160px 0;
+	padding: 0 56px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+section > div:first-child {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	width: calc(50% - 20px);
+}
+
+section > div:first-child img {
+	width: 80px;
+	height: 80px;
+}
+
+section > div:first-child h3 {
+	font-size: 48px;
+}
+
+section > div:first-child p {
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	letter-spacing: -1px;
+	font-weight: normal;
+}
