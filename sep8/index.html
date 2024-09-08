@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando el DOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 id="title" class="text-4xl font-bold px-2 py-4">Hola</h1>
+    <div class="my-10 px-2">
+      <button
+        id="add-content"
+        class="rounded-lg bg-black px-4 py-2 text-white shadow-sm"
+      >
+        Agregar elemento
+      </button>
+      <button
+        id="remove-content"
+        class="rounded-lg bg-white px-4 py-2 text-black border shadow-sm"
+      >
+        Quitar elemento
+      </button>
+    </div>
+    <section class="px-2">
+      <h2 class="text-xl mb-4">Aqui estan los elementos agregados por js</h2>
+      <ol id="container" class="space-y-2 px-10"></ol>
+    </section>
+
+    <section class="my-10 flex items-center justify-center flex-col gap-y-4">
+      <p class="text-xl font-light">La tecla que presionaste es:</p>
+      <h2 id="show-key" class="text-[100px] font-medium"></h2>
+    </section>
+
+    <section>
+      <form class="space-y-4 w-[400px] px-2">
+        <div class="flex flex-col gap-y-0.5">
+          <label for="">Correo electronico</label>
+          <input type="email" class="border px-2 py-1 rounded" />
+        </div>
+        <div class="flex flex-col gap-y-0.5">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="border px-2 py-1 rounded"
+          />
+        </div>
+      </form>
+      <button
+        id="show-password"
+        class="mt-10 ml-2 rounded-lg bg-black px-4 py-2 text-white shadow-sm"
+      >
+        Mostrar password
+      </button>
+    </section>
+  </body>
+  <script src="./main.js"></script>
+</html>

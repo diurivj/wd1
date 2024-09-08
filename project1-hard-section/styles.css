@@ -1,11 +1,18 @@
+:root {
+	--green: #71A894;
+	--black: #303031;
+	--white: #f9f9f9;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-	background-color: #F9F9F9;
+	background-color: var(--white);
 }
 
 .yeseva-one-regular {
@@ -45,14 +52,14 @@ body {
 }
 
 .navbar > nav > a {
-	color: #303031;
+	color: var(--black);
 	font-size: 20px;
 	font-family: sans-serif;
 	text-decoration: none;
 }
 
 .navbar > nav > a:last-child {
-	color: #71A894;
+	color: var(--green);
 	font-weight: 600;
 }
 
