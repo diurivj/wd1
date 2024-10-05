@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tronald Dump</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 class="text-7xl py-10 text-center font-medium font-serif">
+      Tronald Dump
+    </h1>
+    <main class="flex flex-col gap-y-4 items-center justify-center mx-auto">
+      <section id="quote" class="text-center"></section>
+      <button
+        id="get-random-quote"
+        class="border px-8 py-2 rounded-lg border-black bg-black text-white text-lg"
+      >
+        Get random quote
+      </button>
+    </main>
+    <hr class="mt-10 max-w-[1440px] mx-auto" />
+    <section class="flex flex-col mt-10 items-center justify-center gap-y-4">
+      <label for="q">Search for a quote</label>
+      <input
+        id="q"
+        type="text"
+        placeholder="Search..."
+        class="border border-black text-lg px-6 py-2"
+      />
+      <div class="text-center space-y-4" id="searched-quote"></div>
+    </section>
+  </body>
+  <script src="./main.js"></script>
+</html>
