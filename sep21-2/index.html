@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick & Morty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 class="text-3xl font-medium text-center pt-4">Rick & Morty</h1>
+    <div
+      id="pagination"
+      class="flex items-center flex-col justify-center gap-x-2 my-5"
+    >
+      <div class="flex items-center justify-center gap-x-2 my-5"">
+        <button
+          id="back"
+          class="border border-black p-2 flex items-center justify-center disabled:opacity-30"
+        >
+          back
+        </button>
+        <button
+          id="next"
+          class="border border-black p-2 flex items-center justify-center disabled:opacity-30"
+        >
+          next
+        </button>
+      </div>
+    </div>
+    <section
+      id="grid"
+      class="grid grid-cols-4 gap-10 pb-10 max-w-screen-xl mx-auto"
+    ></section>
+  </body>
+  <script src="./main.js"></script>
+</html>
