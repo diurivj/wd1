@@ -1,5 +1,4 @@
-import chalk from 'chalk'
-
-const log = console.log
-
-log(chalk.blue('hola!'))
+"use strict";
+function appendTodo(todo) {
+    return todo.todo;
+}
