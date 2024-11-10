@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jueguito</title>
+  </head>
+  <body>
+    <canvas id="my-canvas" style="position: absolute; inset: 0"></canvas>
+    <main
+      class="h-dvh flex-col gap-y-10 bg-slate-100 flex items-center justify-center"
+    >
+      <div class="text-5xl flex items-center gap-x-2">
+        <h1 class="font-bold">Adivina quien</h1>
+        <span role="img" aria-label="male detective">🕵🏻‍♂️</span>
+      </div>
+
+      <section class="flex flex-col gap-y-10 items-center w-full max-w-xl">
+        <div
+          id="questions-container"
+          class="flex flex-col items-center gap-y-4"
+        >
+          <label for="question-type" class="text-xl">Tipo de pregunta</label>
+        </div>
+
+        <div id="questions-values" class="flex flex-col items-center gap-y-4">
+          <label for="question-value">Valor de la pregunta</label>
+        </div>
+
+        <p id="answer" class="font-medium text-3xl animate-bounce"></p>
+
+        <button
+          id="ask-button"
+          class="px-6 py-2 border rounded-lg text-xl bg-black text-white"
+        >
+          Ask
+        </button>
+      </section>
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="
+		https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js
+		"></script>
+    <link
+      href="
+		https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/site/site.min.css
+		"
+      rel="stylesheet"
+    />
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
