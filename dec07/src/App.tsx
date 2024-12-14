@@ -1,51 +1,69 @@
-import { useState, type ChangeEvent, type MouseEvent } from "react";
+import { KeyboardEvent, useState } from "react";
 
-type AppProps = {
-  message: string;
+type Person = {
+  id: number;
+  name: string;
+  state: "normal" | "marked" | "deleted";
 };
 
-export function App({ message }: AppProps) {
-  const [name, setName] = useState("");
-  const [apiResponse, setApiResponse] = useState();
+export function App() {
+  const [list, setList] = useState<Person[]>([
+    { id: 1, name: "Diego", state: "marked" },
+    { id: 2, name: "Lorena", state: "normal" },
+  ]);
 
-  const onClick = async () => {
-    const response = await fetch(
-      `https://wd1-todos-api.diurivj.workers.dev/api/diego/todos`,
-      {
-        method: "post",
-        body: JSON.stringify({ todo: name }),
-      },
-    );
-    const data = await response.json();
-    setName("");
-    setApiResponse(data.todo.todo);
-  };
+  function handleOnKeyDown(e: KeyboardEvent<HTMLInputElement>) {
+    const person = e.currentTarget.value;
+    if (e.key === "Enter") {
+      e.currentTarget.value = "";
+      setList((prevState) => {
+        return [
+          { id: list.length + 1, name: person, state: "normal" },
+          ...prevState,
+        ];
+      });
+    }
+  }
 
-  const onMouseMove = (e: MouseEvent<HTMLParagraphElement>) => {
-    console.log(e);
-    console.log("Mouse is moviiiiinggg!");
-  };
+  function handleOnClick(id: Person["id"]) {
+    const personToBeModified = list.find((p) => p.id === id);
+    if (!personToBeModified) return;
 
-  const onChange = async (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setName(value);
-  };
+    if (personToBeModified.state === "normal") {
+      setList((prevState) =>
+        prevState.map((person) => {
+          if (person.id === id) {
+            person.state = "marked";
+          }
+          return person;
+        }),
+      );
+      return;
+    }
+
+    setList((prevState) => prevState.filter((p) => p.id !== id));
+  }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
-        alignItems: "center",
-      }}
-    >
-      <p onMouseMove={onMouseMove} style={{ display: "inline" }}>
-        {message}
-      </p>
-      {apiResponse ? <h3>todo: {apiResponse} ha sido guardado!</h3> : null}
-      <input type="text" value={name} onChange={onChange} />
-      <button onClick={onClick}>Click me</button>
-    </div>
+    <main>
+      {list.map((person) => {
+        return (
+          <p
+            key={person.id}
+            style={{
+              textDecoration:
+                person.state === "marked" ? "line-through" : undefined,
+            }}
+            onClick={() => handleOnClick(person.id)}
+          >
+            {person.name}
+          </p>
+        );
+      })}
+      <div>
+        <label htmlFor="person">Add person</label>
+        <input id="person" type="text" onKeyDown={handleOnKeyDown} />
+      </div>
+    </main>
   );
 }
